@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: montserrat;
+    src: url(/public/font/MontserratAlternates-Bold.ttf);
+}
+@font-face {
+    font-family: lora;
+    src: url(/public/font/Lora-Italic.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.font-custom-montserrat{
+    font-family: montserrat;
+}
+.font-custom-lora{
+    font-family: lora;
+}
+
+.swiper-button-prev {
+    background-color: black;
+    border-radius: 100%;
+    padding: 2px 2px 2px 2px;
+    height: 40px !important;
+    width: 40px !important;
+
+}
+
+.swiper-button-next {
+    background-color: black;
+    border-radius: 100%;
+    padding: 2px 2px 2px 2px;
+    height: 40px !important;
+    width: 40px !important;
+}
