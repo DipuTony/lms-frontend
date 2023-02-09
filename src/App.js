@@ -41,6 +41,7 @@ import Certification from './Pages/Certification/Certification';
 import BoughtCoursesList from './Pages/Student/MyCourses/BoughtCoursesList';
 import CertificateIndex from './Pages/Student/Cerificate/CertificateIndex';
 import PlayCourse from './Pages/Student/MyCourses/PlayCourse';
+import StripeIndex from './Pages/Payment/Stripe/StripeIndex';
 
 function App() {
   const [cartItemCount, setCartItemCount] = useState(0)
@@ -102,6 +103,7 @@ function App() {
                   {/* ADDED ROUTES BY TALIB FOR PROFILE PAGE */}
                   <Route path="/certification" element={<Certification />} />
 
+                  <Route path="/test" element={<StripeIndex />} />
                   <Route path="/cart" element={<CartIndex />} />
                   <Route path="/contact" element={<ContactUs />} />
                   <Route path="/about" element={<AboutUs />} />

@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { VscClose } from 'react-icons/vsc'
 import ApiList from '../../Components/Api/ApiList'
+// import StripeIndex from '../Payment/Stripe/StripeIndex'
 // import { FaBVscCloseeer } from 'react-icons/fa';
 
 function CartIndex() {
@@ -22,10 +23,13 @@ function CartIndex() {
             ))
             .catch((err) => console.log("Error while pay", err))
 
+
     }
 
     return (
         <>
+            
+        
             <div className='bg-gray-100'>
                 <div className='grid grid-cols-12 md:p-10 p-3 mt-10 md:space-x-4 md:mx-10'>
                     <div className='md:col-span-8 col-span-12'>
