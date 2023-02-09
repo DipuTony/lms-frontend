@@ -38,7 +38,7 @@ function AdminSidebarIndex() {
 
                     {/* DIVIDER LINE */}
                     <div className="my-4 bg-gray-600 h-[1px]" />
-                    {userIs == 9 &&
+                    {userIs == 9 &&   // This is For Admin
                         <>
                             {/* <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
                                 <AiFillHome className="inline" />
@@ -77,7 +77,7 @@ function AdminSidebarIndex() {
                         </>
 
                     }
-                    {userIs == 1 &&
+                    {userIs == 1 &&  // This is for Student
                         <>
                             <Link to="/StudentDahboard">
                                 <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
@@ -86,7 +86,7 @@ function AdminSidebarIndex() {
                                 </div>
                             </Link>
 
-                            <Link to="#">
+                            <Link to="/my-courses">
                                 <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
                                     <GiOpenBook className="inline" />
                                     <span className="text-sm ml-4 text-gray-200 font-bold">My Course</span>
@@ -98,7 +98,7 @@ function AdminSidebarIndex() {
                                     <span className="text-sm ml-4 text-gray-200 font-bold">Order History</span>
                                 </div>
                             </Link>
-                            <Link to="#">
+                            <Link to="/certificates">
                                 <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
                                     <FaUserGraduate className="inline" />
                                     <span className="text-sm ml-4 text-gray-200 font-bold">Certificates</span>

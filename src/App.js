@@ -38,6 +38,9 @@ import AllCourses from './Pages/Courses/AllCourses';
 import OrderHistory from './Pages/Cart/OrderHistory';
 import Profile from './Pages/Profile/Profile';
 import Certification from './Pages/Certification/Certification';
+import BoughtCoursesList from './Pages/Student/MyCourses/BoughtCoursesList';
+import CertificateIndex from './Pages/Student/Cerificate/CertificateIndex';
+import PlayCourse from './Pages/Student/MyCourses/PlayCourse';
 
 function App() {
   const [cartItemCount, setCartItemCount] = useState(0)
@@ -75,6 +78,9 @@ function App() {
                   <Route element={<FilterStudentRoute />} > {/* Student Private Routes */}
                     <Route path="/StudentDahboard" element={<StudentDahboard />} />
                     <Route path="/order-history" element={<OrderHistory />} />
+                    <Route path="/my-courses" element={<BoughtCoursesList />} />
+                    <Route path="/play" element={<PlayCourse />} />
+                    <Route path="/certificates" element={<CertificateIndex />} />
                   </Route>
                 </Route>
 

@@ -76,6 +76,11 @@
                 "id": 1,
                 "menuName": "Student Menu2",
                 "menuLink": "#"
+            },
+            {
+                "id": 2,
+                "menuName": "Student Menu2",
+                "menuLink": "#"
             }
         ]
     },
