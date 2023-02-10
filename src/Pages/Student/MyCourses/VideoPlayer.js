@@ -17,10 +17,17 @@ import {
 const VideoPlayer = () => {
 
 
+    const fakePlaylist = [
+        { id: 0, url: "https://img.freepik.com/free-vector/online-education-background_52683-8087.jpg", title: "This is Title", courseName: "My Course" },
+        { id: 1, url: "https://img.freepik.com/free-psd/e-learning-concept-poster-style_23-2148600170.jpg", title: "This is Title", courseName: "My Course" },
+        { id: 2, url: "https://img.freepik.com/premium-vector/online-training-education-studying-with-monitor_149152-82.jpg", title: "This is Title", courseName: "My Course" }
+    ]
+
+
     return (
         <>
             <div> This is player </div>
-            <div className='grid grid-cols-12 space-x-5'>
+            <div className='grid grid-cols-12 space-x-0'>
                 <div className='col-span-9'>
                     <div className=' border'>
                         <Player
@@ -44,15 +51,25 @@ const VideoPlayer = () => {
 
                     </div>
                 </div>
-                <div className='col-span-3'>
+                <div className='col-span-3 bg-gray-500'>
                     <div className='border p-5'>
                         Playlist Title
 
                         <p>Progress Autoplay</p>
 
-                        <div className='bg-gray-200'>
-                            Video 1
-                        </div>
+                        {fakePlaylist &&
+
+                            fakePlaylist.map((item) => (
+
+                                <div key={item.id} className='bg-gray-200'>
+                                    <img src={item?.url} className="h-8 w-8 rounded" alt="" />
+                                    <div className='flex text-white'>
+<p className=''>{item?.title}</p>
+<p>{item?.courseName}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
 
                     </div>
                 </div>
