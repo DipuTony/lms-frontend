@@ -18,15 +18,16 @@ const VideoPlayer = () => {
 
 
     const fakePlaylist = [
-        { id: 0, url: "https://img.freepik.com/free-vector/online-education-background_52683-8087.jpg", title: "This is Title", courseName: "My Course" },
-        { id: 1, url: "https://img.freepik.com/free-psd/e-learning-concept-poster-style_23-2148600170.jpg", title: "This is Title", courseName: "My Course" },
-        { id: 2, url: "https://img.freepik.com/premium-vector/online-training-education-studying-with-monitor_149152-82.jpg", title: "This is Title", courseName: "My Course" }
+        { id: 0, url: "https://img.freepik.com/free-vector/online-education-background_52683-8087.jpg", title: "Chapter 1", courseName: "Demo Course" },
+        { id: 1, url: "https://img.freepik.com/free-psd/e-learning-concept-poster-style_23-2148600170.jpg", title: "Chapter 2", courseName: "Demo Course" },
+        { id: 2, url: "https://img.freepik.com/premium-vector/online-training-education-studying-with-monitor_149152-82.jpg", title: "Chapter 3", courseName: "Demo Course" },
+        { id: 3, url: "https://img.freepik.com/premium-vector/online-training-education-studying-with-monitor_149152-82.jpg", title: "Chapter 4", courseName: "Demo Course" },
+        { id: 4, url: "https://img.freepik.com/free-vector/online-education-background_52683-8087.jpg", title: "Chapter 5", courseName: "Demo Course" },
     ]
 
 
     return (
         <>
-            <div> This is player </div>
             <div className='grid grid-cols-12 space-x-0'>
                 <div className='col-span-9'>
                     <div className=' border'>
@@ -52,20 +53,26 @@ const VideoPlayer = () => {
                     </div>
                 </div>
                 <div className='col-span-3 bg-gray-500'>
-                    <div className='border p-5'>
-                        Playlist Title
+                    <div className='border p-1'>
+                        <p className='text-center text-white font-semibold text-2xl my-2'>
+                            Playlist Title
+                        </p>
 
-                        <p>Progress Autoplay</p>
 
                         {fakePlaylist &&
 
                             fakePlaylist.map((item) => (
 
-                                <div key={item.id} className='bg-gray-200'>
-                                    <img src={item?.url} className="h-8 w-8 rounded" alt="" />
-                                    <div className='flex text-white'>
-<p className=''>{item?.title}</p>
-<p>{item?.courseName}</p>
+                                <div key={item.id} className='bg-gray-200 hover:bg-gray-300 p-1 border-b border-black cursor-pointer'>
+                                    <div className=' '>
+                                        <div className='flex m-1'>
+
+                                            <img src={item?.url} className="h-10 w-10 rounded" alt="" />
+                                            <div className='ml-2'>
+                                                <p className='text-sm text-blue-700'>{item?.title}</p>
+                                                <p className='text-xs'>{item?.courseName}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             ))

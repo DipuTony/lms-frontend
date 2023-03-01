@@ -42,6 +42,7 @@ import BoughtCoursesList from './Pages/Student/MyCourses/BoughtCoursesList';
 import CertificateIndex from './Pages/Student/Cerificate/CertificateIndex';
 import PlayCourse from './Pages/Student/MyCourses/PlayCourse';
 import StripeIndex from './Pages/Payment/Stripe/StripeIndex';
+import AddNewCourse from './Pages/Admin/ManageCourses/AddNewCourse';
 
 function App() {
   const [cartItemCount, setCartItemCount] = useState(0)
@@ -70,7 +71,11 @@ function App() {
                     <Route exact path="/dashboard" element={<Dashboard />} />
                     <Route exact path="/CenterList" element={<StudyCenterList />} />
                     <Route exact path="/CurrentAffairs" element={<CurrentAffairsList />} />
+                    
                     <Route exact path="/CourseList" element={<CourseList />} />
+                    <Route exact path="/CourseList/add" element={<AddNewCourse />} />
+
+
                     <Route exact path="/StudentsList" element={<StudentsList />} />
                     <Route exact path="/TeachersList" element={<TeachersList />} />
                   </Route>

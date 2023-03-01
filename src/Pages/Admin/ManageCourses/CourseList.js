@@ -7,6 +7,7 @@ import { FcComboChart } from 'react-icons/fc';
 import ApiList from '../../../Components/Api/ApiList';
 import DataTable from '../../../Components/Common/DataTable/DataTable';
 import AddNewCourse from './AddNewCourse';
+import { useNavigate } from 'react-router-dom';
 
 
 function CourseList(props) {
@@ -19,10 +20,7 @@ function CourseList(props) {
     const [openEditModal, setOpenEditModal] = useState(0)
     const [editBtnId, setEditBtnId] = useState()
 
-    const addBtn = () => {
-        console.log("Add button clicked")
-        setShowAddCenterPopup(prev => prev + 1)
-    }
+    const navigate = useNavigate()
 
     const handleView = (btnId) => {
         console.log("Button Id", btnId)
@@ -117,12 +115,14 @@ function CourseList(props) {
         return axios.post(api_getAllCouses, {}, bearerHeader);
     });
 
+    const addBtn = () => {
+        navigate('/CourseList/add')
+    }
 
     console.log("List of Courses", data)
 
     return (
         <>
-            <AddNewCourse openAddPopUP={showAddCenterPopup} refetchList={refetch} />
             {/* <ViewCurrentAffairs openViewModal={openViewModal} viewBtnId={viewBtnId} /> */}
             {/* <EditCenter openEditModal={openEditModal} editBtnId={editBtnId} /> */}
             <div>
@@ -144,7 +144,7 @@ function CourseList(props) {
                         />
                     </div> :
                         data?.data ?
-                            data?.data?.data?.length ? <DataTable columns={COLUMNS} data={data?.data?.data} addBtn={addBtn} /> : <p className='text-center font-medium'>No Date Found</p>
+                            data?.data?.data?.length ? <DataTable columns={COLUMNS} data={data?.data?.data}  /> : <p className='text-center font-medium'>No Date Found</p>
                             : <p className='text-center text-red-500 font-medium'>Error : Something Went Wrong</p>
                     }
                 </div>

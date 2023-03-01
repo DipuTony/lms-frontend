@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import ProgressBar from '../../../Components/Common/ProgressBar'
 
 const BoughtCoursesList = () => {
@@ -9,23 +10,24 @@ const BoughtCoursesList = () => {
     ]
 
 
-    let a = 20
+const navigate = useNavigate()
+
     return (
         <>
-            <div> Your Purchesed Courses </div>
+            <div> Your Purchased Courses </div>
 
             <div className='grid col-span-1 md:grid-cols-12 xl:md:grid-cols-12 md:space-x-5'>
 
                 {fakeData &&
                     fakeData.map((item, i) => (
-                        <div className='col-span-1 md:col-span-2 my-5'>
+                        <div className='col-span-1 md:col-span-3 xl:col-span-3 my-5'>
                             <div key={i} className='border border-gray-300 rounded-md bg-gray-100'>
-                                <img className='h-52 w-full' src={item?.imgUrl} alt={item?.name} srcset="" />
+                                <img className='h-[10rem] w-[20rem]' src={item?.imgUrl} alt={item?.name} srcset="" />
                                 <p className='m-2 text-2xl font-semibold'>{item?.name}</p>
 
                                 <ProgressBar percentage={item.percentage} />
                                 <div className='m-3'>
-                                    <button className='bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded w-full'>Start</button>
+                                    <button onClick={()=> navigate('/play')} className='bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded w-full'>Start</button>
                                 </div>
                             </div>
                         </div>
